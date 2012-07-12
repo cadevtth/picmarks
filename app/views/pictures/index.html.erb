@@ -1,0 +1,7 @@
+<h1>List of Pictures</h1>
+
+<ul>
+  <% @pictures.each do |picture_url| %>
+    <li><img src="<%= picture_url %>" /></li>
+  <% end %>
+</ul>
