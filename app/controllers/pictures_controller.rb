@@ -1,10 +1,16 @@
 class PicturesController < ApplicationController
-  
   def all_pictures
-    return ["http://2.cdn.nhle.com/nhl/images/upload/2012/07/RAYMOND_205v2_070912.jpg",
-      "http://2.cdn.nhle.com/nhl/images/upload/2010/04/doanIMprov26.jpg",
-      "http://2.cdn.nhle.com/blackhawks/images/upload/2012/04/identity-banner-no-att.jpg"]
+    return [
+      { :url => 'http://www.w3.org/html/logo/downloads/HTML5_Logo_512.png', :note => 'HTML5' },
+      { :url => 'http://www.ruby-camping.com/img/slides/ruby.png', :note => 'Ruby' },
+      { :url => 'http://www.bugtreat.com/blog/wp-content/uploads/2012/06/ruby-on-rails-logo.png', :note => 'Rails' }
+      ]
   end
+  
+  def new
+    
+  end
+  
   
   def index
     @pictures = all_pictures
@@ -15,7 +21,8 @@ class PicturesController < ApplicationController
     
     id = params[:id].to_i
     
-    @url = pictures[id]          
+    @url = pictures[id][:url]
+    @note = pictures[id][:note]
   end
 end
 
