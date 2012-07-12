@@ -14,6 +14,7 @@ class PicturesController < ApplicationController
   
   def index
     @pictures = all_pictures
+    @url = params[:url]
   end
   
   def show

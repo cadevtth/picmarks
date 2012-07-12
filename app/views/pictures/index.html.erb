@@ -1,6 +1,7 @@
 <h1>List of Pictures</h1>
 
 <ul>
+  <li><img width="200" src="<%= @url %>"></li>
   <% @pictures.each_with_index do |picture_hash, i| %>
     <li>
       <a href="http://localhost:3000/pictures/<%= i %>"><img width="200" src="<%= picture_hash[:url] %>"></a>
