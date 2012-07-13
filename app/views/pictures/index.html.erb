@@ -2,9 +2,10 @@
 
 <ul>
   <li><img width="200" src="<%= @url %>"></li>
-  <% @pictures.each_with_index do |picture_hash, i| %>
+  
+  <% @pictures.each do |picture| %>
     <li>
-      <a href="http://localhost:3000/pictures/<%= i %>"><img width="200" src="<%= picture_hash[:url] %>"></a>
+      <a href="http://localhost:3000/pictures/<%= picture.id %>"><img width="200" src="<%= picture.url %>"></a>
     </li>
   <% end %>
 </ul>

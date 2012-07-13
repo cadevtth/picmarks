@@ -13,7 +13,7 @@ class PicturesController < ApplicationController
   
   
   def index
-    @pictures = all_pictures
+    @pictures = Picture.all  # We're now using a database instead of the hardcode data
     @url = params[:url]
   end
   
