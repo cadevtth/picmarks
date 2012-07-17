@@ -1,3 +1,3 @@
 class Picture < ActiveRecord::Base
-  attr_accessible :favorite, :note, :url
+  attr_accessible :favorite, :notes, :url
 end

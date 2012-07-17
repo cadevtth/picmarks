@@ -1,29 +1,25 @@
 class PicturesController < ApplicationController
-  def all_pictures
-    return [
-      { :url => 'http://www.w3.org/html/logo/downloads/HTML5_Logo_512.png', :note => 'HTML5' },
-      { :url => 'http://www.ruby-camping.com/img/slides/ruby.png', :note => 'Ruby' },
-      { :url => 'http://www.bugtreat.com/blog/wp-content/uploads/2012/06/ruby-on-rails-logo.png', :note => 'Rails' }
-      ]
-  end
   
   def new
     
   end
   
-  
+  # CHALLENGE: Save the incoming url and note to the database
+  # so we don't lose it when we refresh our page
+  # HINT: Use the Picture model to insert a new row into the database.  
   def index
-    @pictures = Picture.all  # We're now using a database instead of the hardcode data
+    @pictures = Picture.all
+    
+    p = Picture.new
+    p.url = params[:url]
+    p.notes = params[:note]
+    p.save
+    
     @url = params[:url]
   end
   
   def show
-    pictures = all_pictures
-    
-    id = params[:id].to_i
-    
-    @url = pictures[id][:url]
-    @note = pictures[id][:note]
+    @picture = Picture.find_by_id(params[:id])
   end
 end
 

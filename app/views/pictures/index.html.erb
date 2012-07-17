@@ -5,7 +5,7 @@
   
   <% @pictures.each do |picture| %>
     <li>
-      <a href="http://localhost:3000/pictures/<%= picture.id %>"><img width="200" src="<%= picture.url %>"></a>
+      <a href="/pictures/<%= picture.id %>"><img width="200" src="<%= picture.url %>"></a>
     </li>
   <% end %>
 </ul>
