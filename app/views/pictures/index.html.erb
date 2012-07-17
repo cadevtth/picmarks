@@ -1,8 +1,6 @@
 <h1>List of Pictures</h1>
 
 <ul>
-  <li><img width="200" src="<%= @url %>"></li>
-  
   <% @pictures.each do |picture| %>
     <li>
       <a href="/pictures/<%= picture.id %>"><img width="200" src="<%= picture.url %>"></a>
