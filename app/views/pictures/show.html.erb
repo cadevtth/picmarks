@@ -3,7 +3,7 @@
 <div>
   <h2><%= @picture.notes %></h2>
   <p>
-    <%= link_to "Edit This Picture", "http://localhost:3000/pictures/edit/#{@picture.id}" %>
+    <%= link_to "Edit This Picture", edit_picture_url(@picture.id) %>
     </p>
   <img width="200" src="<%= @picture.url %>"/>
 </div>

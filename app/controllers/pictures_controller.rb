@@ -1,5 +1,11 @@
 class PicturesController < ApplicationController
   
+  def destroy
+    @picture = Picture.find_by_id(params[:id])
+    @picture.destroy
+    redirect_to pictures_url
+  end
+  
   def edit
     @picture = Picture.find_by_id(params[:id])
   end
@@ -9,8 +15,9 @@ class PicturesController < ApplicationController
     @picture.url = params[:url]
     @picture.notes = params[:note]
     @picture.save
-    redirect_to "http://localhost:3000/pictures/#{@picture.id}"
+    redirect_to picture_url(@picture.id)
   end
+  
   def new
     
   end
@@ -21,7 +28,7 @@ class PicturesController < ApplicationController
     p.notes = params[:note]
     p.save
     
-    redirect_to "/pictures"
+    redirect_to "http://localhost:3000/pictures"
   end
   
   # CHALLENGE: Move the creation code to

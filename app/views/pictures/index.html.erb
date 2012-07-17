@@ -3,7 +3,8 @@
 <ul>
   <% @pictures.each do |picture| %>
     <li>
-      <a href="/pictures/<%= picture.id %>"><img width="200" src="<%= picture.url %>"></a>
+      <%= link_to image_tag(picture.url, :width => 200), picture_url(picture.id) %>
+      <%= link_to "Delete", picture_url(picture.id), :method => :delete %>
     </li>
   <% end %>
 </ul>
