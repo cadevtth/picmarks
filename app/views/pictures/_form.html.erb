@@ -1,0 +1,7 @@
+<%= form_for @picture do |f| %>
+  URL: <%= f.text_field :url %>
+  <br/>
+  Notes: <%= f.text_area :notes, :rows => 6 %>
+  <br/>
+  <%= f.submit %>
+<% end %>

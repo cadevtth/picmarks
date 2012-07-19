@@ -10,16 +10,18 @@ class PicturesController < ApplicationController
     @picture = Picture.find_by_id(params[:id])
   end
   
+  # Parameters: {"utf8"=>"✓", "authenticity_token"=>"idOnHqsHYcXDl1FXwczguOhp8/2Ab8WU8l90qMQdebY=", "picture"=>{"url"=>"http://chicago.cubs.mlb.com/images/2011/08/30/G4WBJp4U.jpg", "notes"=>"Winning"}, "commit"=>"Update Picture", "id"=>"19"}
+  # 
   def update
     @picture = Picture.find_by_id(params[:id])
-    @picture.url = params[:url]
-    @picture.notes = params[:note]
+    @picture.url = params[:picture][:url]
+    @picture.notes = params[:picture][:notes]
     @picture.save
     redirect_to picture_url(@picture.id)
   end
   
   def new
-    
+    @picture = Picture.new
   end
   
   def create

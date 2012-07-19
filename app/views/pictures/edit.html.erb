@@ -1,9 +1,3 @@
 <h1>Edit A New Picture</h1>
-<!-- Implement this form, then implement the update. -->
-<%= form_tag "/pictures/#{@picture.id}", :method => :put do %>
-  URL: <%= text_field_tag "url", @picture.url %>
-  <br/>
-  Note: <%= text_area_tag "note", @picture.notes, :placeholder => "Sample Note" %>
-  <br/>
-  <%= submit_tag %>
-<% end %>
+
+<%= render 'form' %>
