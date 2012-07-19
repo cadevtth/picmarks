@@ -26,8 +26,8 @@ class PicturesController < ApplicationController
   
   def create
     p = Picture.new
-    p.url = params[:url]
-    p.notes = params[:note]
+    p.url = params[:picture][:url]
+    p.notes = params[:picture][:note]
     p.save
     
     redirect_to "http://localhost:3000/pictures"
